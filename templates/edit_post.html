@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post - My Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Edit Your Post</h1>
+        <p>Update your thoughts and keep your blog fresh</p>
+    </div>
+
+    <div class="form-card">
+
+        <h2>Update Post</h2>
+
+        <form method="POST">
+
+            <label>Title</label>
+
+            <input
+                type="text"
+                name="title"
+                value="{{ post.title }}"
+                required
+            >
+
+            <label>Content</label>
+
+            <textarea
+                name="content"
+                required
+            >{{ post.content }}</textarea>
+
+            <button type="submit">Update Post</button>
+
+        </form>
+
+        <br>
+
+        <a href="{{ url_for('index') }}">← Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
